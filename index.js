@@ -1,7 +1,17 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") throw new TypeError(`Expected a string, got ${typeof input}`)
+const { default: ow } = require("ow")
+const translate = require("./lib/translate")
 
-	return `${input} & ${postfix}`
+module.exports = (text, from, to) => {
+	if (!to) {
+		to = from
+		from = "auto"
+	}
+
+	ow(text, ow.string)
+	ow(from, ow.string)
+	ow(to, ow.string)
+
+	return translate({ text, from, to })
 }

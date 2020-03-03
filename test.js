@@ -1,13 +1,6 @@
 const test = require("ava")
-const theModule = require(".")
+const tripe = require(".")
 
-test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
-	})
-
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test("main", async (t) => {
+	t.is(await tripe("Good morning!", "fr"), "Bonjour!")
 })

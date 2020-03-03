@@ -1,14 +1,15 @@
 {
-	"name": "the-module",
+	"name": "tripe",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Translate text through Google Translate.",
+	"repository": "https://github.com/Richienb/tripe.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
 	"files": [
 		"index.js",
-		"index.d.ts"
+		"index.d.ts",
+		"lib/**/*"
 	],
 	"engines": {
 		"node": ">=10"
@@ -17,8 +18,19 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"google",
+		"translate",
+		"api",
+		"free",
+		"language"
+	],
+	"dependencies": {
+		"ky": "^0.18.0",
+		"ky-universal": "^0.5.0",
+		"ow": "^0.17.0",
+		"query-string": "^6.11.1"
+	},
 	"devDependencies": {
 		"ava": "^3.5.0",
 		"eslint-config-richienb": "^0.3.0",
@@ -28,6 +40,9 @@
 		"eslint": "^6.8.0"
 	},
 	"xo": {
-		"extends": "richienb/node"
+		"extends": "richienb",
+		"ignores": [
+			"lib/token.js"
+		]
 	}
 }

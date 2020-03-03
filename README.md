@@ -1,41 +1,52 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Tripe [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/tripe/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/tripe)
 
-My awesome module.
+Translate text through Google Translate.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/tripe.png)](https://npmjs.com/package/tripe)
+
+## Improvements over `google-translate-api`
+
+- Supports browsers.
+- Automatically autocorrect text.
+- Simpler interface.
+- Actively maintained.
 
 ## Install
 
 ```sh
-npm install the-module
+npm install tripe
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const tripe = require("tripe");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	await tripe("Good morning", "fr")
+	//=> Bonjour!
+})()
 ```
 
 ## API
 
-### theModule(input, options?)
+### tripe(text, from, to)
+### tripe(text, to)
 
-#### input
+#### text
 
 Type: `string`
 
-Lorem ipsum.
+The text to translate.
 
-#### options
+##### from
 
-Type: `object`
+Type: `string`
 
-##### postfix
+The initial language.
 
-Type: `string`\
-Default: `rainbows`
+##### to
 
-Lorem ipsum.
+Type: `string`
+
+The target language.

@@ -1,14 +1,19 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Check if a number is a prime number.
+ * @param text The text to translate.
+ * @param from The initial language.
+ * @param to The target language.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const tripe = require("tripe");
+ *
+ * (async () => {
+ * 	await tripe("Hello!", "fr")
+ * 	//=> Bonjour
+ * })()
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function tripe(text: string, to: string): Promise<string>
+declare function tripe(text: string, from: string, to: string): Promise<string>
 
-export = theModule;
+export = tripe
