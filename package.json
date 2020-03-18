@@ -1,6 +1,6 @@
 {
 	"name": "tripe",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Translate text through Google Translate.",
 	"repository": "https://github.com/Richienb/tripe.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
