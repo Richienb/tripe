@@ -1,6 +1,6 @@
 "use strict"
 
-const { default: ow } = require("ow")
+const { assert } = require("@sindresorhus/is")
 const translate = require("./lib/translate")
 
 module.exports = (text, from, to) => {
@@ -9,9 +9,9 @@ module.exports = (text, from, to) => {
 		from = "auto"
 	}
 
-	ow(text, ow.string)
-	ow(from, ow.string)
-	ow(to, ow.string)
+	assert.string(text)
+	assert.string(from)
+	assert.string(to)
 
 	return translate({ text, from, to })
 }
