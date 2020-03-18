@@ -24,7 +24,7 @@ const tripe = require("tripe");
 
 (async () => {
 	await tripe("Good morning", "fr")
-	//=> Bonjour!
+	//=> 'Bonjour!'
 })()
 ```
 
